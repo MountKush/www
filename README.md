@@ -1,7 +1,6 @@
-# Freelance Portfolio
+# Mount Kush
 
-This is my Full Stack Developer freelance portfolio (currently in alpha) showcasing selective work, information about me, and what I am up to.
-
+More to be announced.
 
 ## Documentation
 
