@@ -60,6 +60,14 @@ module.exports = {
     'nuxt-client-init-module',
 
     'nuxt-vuex-router-sync',
+
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-126987500-2',
+      debug: {
+        // enabled: !isProd,
+        sendHitTask: isProd
+      }
+    }]
   ],
 
   /*
