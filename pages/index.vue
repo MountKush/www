@@ -5,10 +5,12 @@ main(class='container-index')
       div
       h1 Mount Kush
   Hero
-  Services
+  //- Services
   Work
-  Testimonial
+
   //- About
+  Prices
+  Testimonial
   Contact
 </template>
 
@@ -20,6 +22,7 @@ import Work from '~/components/Work.vue'
 import Testimonial from '~/components/Testimonial.vue'
 import About from '~/components/About.vue'
 import Contact from '~/components/Contact.vue'
+import Prices from '~/components/Prices.vue'
 
 
 export default {
@@ -29,7 +32,8 @@ export default {
     Work,
     Testimonial,
     About,
-    Contact
+    Contact,
+    Prices
   },
   data () {
     return {}

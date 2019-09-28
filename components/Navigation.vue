@@ -77,6 +77,9 @@ export default {
         //   text: 'Bio'
         // },
         {
+          text: 'Pricing'
+        },
+        {
           text: 'Contact'
         }
       ]

@@ -7,7 +7,10 @@ div(
   section(class='hero')
     div(class='hero__body')
       h1(class='hero__headline') {{ headline }}
-      p(class='hero__text') {{ text }}
+      p(class='hero__text')
+        | We're
+        span(class='hero__text--bold') &nbsp;Mount Kush
+        | , a Shopify development agency helping Cannabis brands succeed.
       a(
         v-scroll-to='"#contact"'
         class='hero__link'
@@ -44,7 +47,9 @@ export default {
   data () {
     return {
       headline: 'Shopify Experts',
-      text: 'We\'re Mount Kush, a Shopify development agency specializing in growing Cannabis brands.',
+      // text: 'We\'re Mount Kush, a Shopify development agency specializing in growing Cannabis brands.',
+      // text: 'We\'re Mount Kush, a Shopify development agency helping Cannabis brands succeed.',
+      text: '',
       link: 'Get In Touch',
       image: atomEditor
     }
@@ -90,6 +95,14 @@ export default {
     @extend %text-copy
     max-width: $fs*28
     margin-top: $unit*2
+
+    &--bold
+      @extend %text-copy
+      font-weight: $fw-bold
+
+    &--highlight
+      @extend %text-copy
+      // color: #a28c14
 
   &__link
     @extend %card-container
