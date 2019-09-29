@@ -6,7 +6,9 @@ div(
 
   Navigation
 
-  Hamburger(class='vue-app__hamburger')
+  NavBar(class='vue-app__nav-bar')
+
+  //- Hamburger(class='vue-app__hamburger')
 
   nuxt(class='vue-app__view')
 
@@ -16,7 +18,7 @@ div(
 
 <script>
 import Navigation from '~/components/Navigation.vue'
-import Hamburger from '~/components/Hamburger.vue'
+import NavBar from '~/components/NavBar.vue'
 import Footer from '~/components/Footer.vue'
 import { mapState } from 'vuex'
 
@@ -24,7 +26,7 @@ import { mapState } from 'vuex'
 export default {
   components: {
     Navigation,
-    Hamburger,
+    NavBar,
     Footer
   },
   data () {
@@ -46,8 +48,6 @@ export default {
 
 <style lang='sass'>
 .vue-app
-  +mq-s
-    padding-left: $unit*6
 
   &__hamburger
     position: fixed
@@ -60,6 +60,10 @@ export default {
       right: unset
       transform: translate(-50%, -50%)
 
+  &__nav-bar
+    position: fixed
+    z-index: 99
+    width: 100vw
 
   &__error,
   &__view

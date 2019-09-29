@@ -9,7 +9,7 @@ main(class='container-index')
   Work
 
   //- About
-  Prices
+  Pricing
   Testimonial
   Contact
 </template>
@@ -22,7 +22,7 @@ import Work from '~/components/Work.vue'
 import Testimonial from '~/components/Testimonial.vue'
 import About from '~/components/About.vue'
 import Contact from '~/components/Contact.vue'
-import Prices from '~/components/Prices.vue'
+import Pricing from '~/components/Pricing.vue'
 
 
 export default {
@@ -33,7 +33,7 @@ export default {
     Testimonial,
     About,
     Contact,
-    Prices
+    Pricing
   },
   data () {
     return {}

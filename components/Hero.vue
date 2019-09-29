@@ -83,7 +83,7 @@ export default {
     z-index: 3
     grid-row: 1 / 2
     grid-column: 1 / 2
-    padding: $unit*10 0
+    padding: $unit*20 0
 
   &__headline
     font-size: $fs2
@@ -121,7 +121,7 @@ export default {
   grid-row: 2 / 3
   grid-column: 1 / 2
   width: 100%
-  height: 420px
+  max-height: 492px
   background: $grey
   object-fit: cover
   margin: 120px 0 0 0

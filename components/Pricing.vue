@@ -110,9 +110,7 @@ export default {
   &__item
     @extend %flex--column
     @extend %card-container
-    max-width: $unit*57
     flex: 1
-    padding: $unit*3 $unit*2
     margin-bottom: $unit*5
     background: $white
     &:last-child
