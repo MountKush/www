@@ -18,17 +18,17 @@ div(
 
     //- HeroComposite(class='hero__composite')
     //- video(
-    //-   :src='image'
+    //-   :src='video'
     //-   class='video'
     //-   autoplay
     //-   loop
     //-   muted
     //-   playsinline
     //- )
-    img(
-      :src='image'
-      class='video'
-    )
+    //- img(
+    //-   :src='image'
+    //-   class='video'
+    //- )
 </template>
 
 
@@ -36,7 +36,7 @@ div(
 import Card from '~/components/Card.vue'
 import HeroComposite from '~/components/HeroComposite.vue'
 import atomEditor from '~/assets/images/cannabisHero2.jpg'
-
+import video from '~/assets/video2.mp4'
 
 export default {
   components: {
@@ -51,7 +51,8 @@ export default {
       // text: 'We\'re Mount Kush, a Shopify development agency helping Cannabis brands succeed.',
       text: '',
       link: 'Get In Touch',
-      image: atomEditor
+      image: atomEditor,
+      video: video
     }
   },
   computed: {},
@@ -124,7 +125,7 @@ export default {
   max-height: 492px
   background: $grey
   object-fit: cover
-  margin: 120px 0 0 0
-  // box-shadow: 0px 8px 24px rgba(34, 34, 34, 0.5)
+  // margin: 120px 0 0 0
+  box-shadow: 0px 8px 24px rgba(34, 34, 34, 0.5)
   border-radius: 6px
 </style>

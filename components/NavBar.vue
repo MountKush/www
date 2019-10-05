@@ -51,9 +51,9 @@ export default {
         {
           text: 'Pricing'
         },
-        {
-          text: 'Team'
-        },
+        // {
+        //   text: 'Team'
+        // },
         {
           text: 'Contact'
         }
@@ -124,11 +124,13 @@ export default {
     // display: none
 
   &__list
-    display: grid
-    grid-auto-flow: column
-    align-items: center
-    grid-gap: $unit*5
-    justify-self: end
+    display: none
+    +mq-s
+      display: grid
+      grid-auto-flow: column
+      align-items: center
+      grid-gap: $unit*5
+      justify-self: end
 
   &__item
 
