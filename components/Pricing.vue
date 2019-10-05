@@ -108,8 +108,8 @@ export default {
       flex-direction: row
 
   &__item
-    @extend %flex--column
     @extend %card-container
+    display: grid
     flex: 1
     margin-bottom: $unit*5
     background: $white
@@ -130,7 +130,6 @@ export default {
   display: grid
   grid-gap: $unit*2
   grid-template-rows: auto auto 1fr auto auto
-  height: 100%
   // box-shadow: 0px 0px $unit rgba(34, 34, 34, 0.05)
 
   &__title
