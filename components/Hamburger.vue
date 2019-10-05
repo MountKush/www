@@ -88,7 +88,7 @@ export default {
 
     &::after,
     &::before
-      background: $white
+      // background: $white
       transform: translate(-50%, 0)
 
   &.isBack
