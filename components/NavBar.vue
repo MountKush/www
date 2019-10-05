@@ -95,8 +95,9 @@ export default {
 
   &__hamburger
     justify-self: end
-    // display: none
     margin-left: $unit*5
+    +mq-s
+      display: none
 
   &__logo
     @extend %card-container

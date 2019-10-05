@@ -121,7 +121,7 @@ export default {
   left: -100%
   width: 100vw
   min-height: 100vh
-  background: $black
+  background: $white
   transition: opacity 200ms
   opacity: 0
   +mq-s
@@ -159,7 +159,6 @@ export default {
       margin: 0
 
   &__link
-    color: $white
     opacity: 0.9
 
     &:hover
