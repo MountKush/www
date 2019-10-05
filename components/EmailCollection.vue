@@ -13,7 +13,7 @@ div(
   div(class='email-collection__wrapper')
     div
       h1(class='email-collection__title') Let's Chat
-      p(class='email-collection__copy') Enter you're email to schedule a consultation.
+      p(class='email-collection__copy') Enter your email to schedule a consultation.
 
     form(
       @submit.prevent='newsletterSubscribe'
