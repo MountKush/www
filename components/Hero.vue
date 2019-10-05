@@ -17,14 +17,14 @@ div(
       ) {{ link }}
 
     //- HeroComposite(class='hero__composite')
-    //- video(
-    //-   :src='video'
-    //-   class='video'
-    //-   autoplay
-    //-   loop
-    //-   muted
-    //-   playsinline
-    //- )
+    video(
+      :src='video'
+      class='video'
+      autoplay
+      loop
+      muted
+      playsinline
+    )
     //- img(
     //-   :src='image'
     //-   class='video'

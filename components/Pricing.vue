@@ -64,7 +64,7 @@ export default {
           price: '$5,000 minimum',
           button: 'Get started',
           list: [
-            'Expert Spark Theme support',
+            'Advance Spark Theme support',
             'Plugin integration',
             'Design additions',
             'Development additions',
