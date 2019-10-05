@@ -27,12 +27,15 @@ div(
           //- p
             //- span(class='card__title') Cost:&nbsp;
           span(class='card__price') {{ item.price }}
-          button(class='card__button') {{ item.button }}
+          button(
+            @click='openEmailCollection'
+            class='card__button') {{ item.button }}
 
 </template>
 
 
 <script>
+import { mapMutations } from 'vuex'
 
 export default {
   components: {},
@@ -86,7 +89,11 @@ export default {
     }
   },
   computed: {},
-  methods: {}
+  methods: {
+    ...mapMutations({
+      openEmailCollection: 'app/OPEN_EMAIL_COLLECTION'
+    })
+  }
 }
 </script>
 

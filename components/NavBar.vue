@@ -104,16 +104,17 @@ export default {
     display: flex
     align-items: center
     color: $blue
-    // border: 1px solid #d2b620
+    // color: #caa94a
+    // color: $white
+    // border: 2px solid #caa94a
     padding: $unit
     background: $grey
+    // background: #caa94a
 
     & p
       margin-left: $unit
       text-transform: uppercase
-      // font-weight: $fw-bold
       color: currentColor
-      // font-size: $fs1
       font-size: 14px
       font-family: $sec-font
       letter-spacing: 2px

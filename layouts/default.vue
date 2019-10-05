@@ -6,6 +6,8 @@ div(
 
   Navigation
 
+  EmailCollection
+
   NavBar(class='vue-app__nav-bar')
 
   //- Hamburger(class='vue-app__hamburger')
@@ -20,6 +22,7 @@ div(
 import Navigation from '~/components/Navigation.vue'
 import NavBar from '~/components/NavBar.vue'
 import Footer from '~/components/Footer.vue'
+import EmailCollection from '~/components/EmailCollection.vue'
 import { mapState } from 'vuex'
 
 
@@ -27,7 +30,8 @@ export default {
   components: {
     Navigation,
     NavBar,
-    Footer
+    Footer,
+    EmailCollection
   },
   data () {
     return {}

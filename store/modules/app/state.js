@@ -4,5 +4,8 @@ export default {
   },
   menu: {
     isOpen: false,
+  },
+  emailCollection: {
+    isOpen: false
   }
 }

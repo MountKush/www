@@ -263,12 +263,13 @@ export default {
     grid-row: 2 / 3
     grid-column: 2 / 3
     padding: $unit $unit*3
-    background: $dark
-    color: $white
+    background: $grey
+    color: $blue
     transition: box-shadow 250ms ease
 
     &.active
       background: $blue
+      color: $white
       box-shadow: 0px $unit $unit*3 rgba(34, 34, 34, 0.25)
       cursor: pointer
 
