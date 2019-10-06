@@ -10,7 +10,7 @@ div(
       p(class='hero__text')
         | We're
         span(class='hero__text--bold') &nbsp;Mount Kush
-        | , a Shopify development agency helping Cannabis brands succeed.
+        | , a Shopify software agency helping Cannabis merchants succeed.
       a(
         v-scroll-to='"#contact"'
         class='hero__link'
