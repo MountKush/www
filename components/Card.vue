@@ -1,53 +1,36 @@
 <template lang='pug'>
-div(class='container-card')
+article(class='card')
+  a(
+    target='_blank'
+    class='card__link'
+  )
 
-  article(class='card')
-    div(class='card__aspect-ratio')
-      a(
-        v-if='card.link'
-        :href='card.link'
-        target='_blank'
-        class='card__link'
-      )
-      svg(
-        class='card__aspect-ratio-sizer'
-        viewBox='0 0 1 1'
-      )
-      //- display
-      div(
-        v-if='card.image'
-        class='card__display'
-      )
-        img(
-          v-lazy='card.image'
-          class='card__image'
-        )
-    //- body
-    div(
-      v-if='card.headline || card.text || card.link'
-      class='card__body'
+  CardCopy(
+    class='card__body'
+    :headline='cardData.headline'
+    :text='cardData.text'
+    :links='cardData.links'
+  )
+
+  //- display
+  div(
+    v-if='card.image'
+    class='card__display'
+  )
+    img(
+      v-lazy='card.image'
+      class='card__image'
     )
-      h3(
-        v-if='card.headline'
-        class='card__headline'
-      ) {{ card.headline }}
-      p(
-        v-if='card.text'
-        class='card__text'
-      ) {{ card.text }}
-      //- a(
-      //-   v-if='card.link'
-      //-   :href='card.link'
-      //-   class='card__link'
-      //- ) {{ card.linkText }}
-
 </template>
 
 
 <script>
+import CardCopy from '~/components/CardCopy.vue'
 
 export default {
-  components: {},
+  components: {
+    CardCopy
+  },
   props: {
     cardData: {
       type: Object,
@@ -60,10 +43,7 @@ export default {
   computed: {
     card () {
       return {
-        image: this.cardData.image ? this.cardData.image : '',
-        headline: this.cardData.headline ? this.cardData.headline : '',
-        text: this.cardData.text ? this.cardData.text : '',
-        link: this.cardData.link ? this.cardData.link : ''
+        image: this.cardData.image ? this.cardData.image : ''
       }
     }
   },
@@ -73,62 +53,39 @@ export default {
 
 
 <style lang='sass' scoped>
-.container-card
-  height: 100%
-
 .card
-  @extend %card-container
+  display: grid
+  grid-template-rows: auto 1fr
+  grid-template-columns: 1fr
   height: 100%
-  background: $white
-
-  &__aspect-ratio
-    display: grid
-    max-height: 492px
-
-    &-sizer
-      grid-row: 1 / 2
-      grid-column: 1 / 2
+  min-height: 520px
+  background: $grey
 
   &__link
-    grid-row: 1 / 2
+    grid-row: 1 / 3
     grid-column: 1 / 2
-    z-index: 6
-
-  &__display
     position: relative
-    grid-row: 1 / 2
-    grid-column: 1 / 2
-    background: $grey
-    max-height: 492px
-
-  &__image
-    position: absolute
-    z-index: 5
-    left: 50%
-    bottom: 0
-    max-width: 80%
-    max-height: 80%
-    transform: translateX(-50%)
-    object-fit: contain
-    object-position: bottom
-    box-shadow: 8px -8px 16px rgba(34, 34, 34, 0.5)
+    z-index: 3
 
   &__body
+    grid-row: 1 / 2
+    grid-column: 1 / 2
+    padding: $unit*10 0
     position: relative
-    z-index: 6
-    padding: $unit*3 $unit*2
-    background: $white
+    z-index: 4
 
-  &__headline
-    font-weight: $fw-bold
+  &__display
+    grid-row: 2 / 3
+    grid-column: 1 / 2
+    position: relative
+    z-index: 1
+    display: flex
+    justify-content: center
+    align-items: flex-end
 
-  &__text
-    @extend %text-copy
-    margin-top: $unit
-
-  &__link
-    color: $blue
-
+  &__image
+    max-width: 520px
+    max-height: 520px
 
 // override(s)
 .no-shadow

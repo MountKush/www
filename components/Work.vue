@@ -5,7 +5,7 @@ div(
 )
 
   section(class='work')
-    h2(class='work__headline') {{ headline }}
+    //- h2(class='work__headline') {{ headline }}
     ul(class='work__list')
       li(
         v-for='(item, index) in work'
@@ -28,6 +28,7 @@ import kushMockup from '~/assets/images/kushMockup.png'
 import adventMockup from '~/assets/images/adventMockup.png'
 import galleryMockup from '~/assets/images/galleryMockup.png'
 import mockupVessel from '~/assets/images/mockupVessel.jpg'
+import headshot from '~/assets/images/headshot.png'
 
 
 export default {
@@ -41,34 +42,82 @@ export default {
       work: [
         {
           image: mockupVessel,
-          headline: 'Vessel',
-          text: 'Premium cannabis dispensary serving Portland, OR.',
-          link: ''
+          headline: 'Themes',
+          text: 'Premium cannabis themes guarenteed to increase your user engagement.',
+          links: [
+            {
+              link: 'linkText',
+              linkText: 'Learn more'
+            },
+            {
+              link: 'linkText',
+              linkText: 'Buy'
+            }
+          ]
         },
         {
           image: feedMeSugarMockup,
-          headline: 'Feed Me Sugar',
-          text: 'Asynchronous e-commerce application utilizing Shopify APIs.',
-          link: 'https://www.feedmesugar.com/'
+          headline: 'Next Generation Dashboard',
+          text: 'A 100+ exclusive advanced Shopify applications.',
+          links: [
+            {
+              link: 'linkText',
+              linkText: 'Learn more'
+            },
+            {
+              link: 'linkText',
+              linkText: 'Create account'
+            }
+          ]
         },
-        // {
-        //   image: kushMockup,
-        //   headline: 'Kush Rugs',
-        //   text: 'E-commerce storefront selling ethically sourced designer rugs. (Monumental Agency)',
-        //   link: 'https://kushrugs.com/'
-        // },
+        {
+          image: headshot,
+          headline: 'About Us',
+          text: 'A deep understanding of the Cannabis industry, and a data-driven approach makes us unique.',
+          links: [
+            {
+              link: 'linkText',
+              linkText: 'Learn more'
+            },
+            {
+              link: 'linkText',
+              linkText: 'Contact us'
+            }
+          ]
+        },
         {
           image: chatCiaoMockup,
-          headline: 'Chat Ciao',
-          text: 'Anonymous Peer-to-Peer text, voice & video chat solution.',
-          link: 'https://chat-ciao.herokuapp.com/'
+          headline: 'Our Clients',
+          text: 'See what your peers have to say about us.',
+          links: [
+            {
+              link: 'linkText',
+              linkText: 'See more'
+            }
+          ]
         },
         {
           image: galleryMockup,
-          headline: 'Gallery',
-          text: 'Stripped down showcase of large photographic content.',
-          link: 'https://still-citadel-96416.herokuapp.com/'
+          headline: 'We Write',
+          text: 'We share Shopify pro tips regularly, explore our blog to learn something new.',
+          links: [
+            {
+              link: 'linkText',
+              linkText: 'See more'
+            }
+          ]
         },
+        {
+          image: adventMockup,
+          headline: 'Weekly Newsletter',
+          text: 'Weekly newsletter of the latest trends in the Cannabis industry.',
+          links: [
+            {
+              link: 'linkText',
+              linkText: 'Subscribe'
+            }
+          ]
+        }
         // {
         //   image: dashMockup,
         //   headline: 'Dash — Single Page Application',
@@ -92,20 +141,20 @@ export default {
 
 <style lang='sass' scoped>
 .container-work
-  @extend %container-main
+  // @extend %container-main
+  margin: 0 $unit*2
 
 .work
-  @extend %container-content
+  // @extend %container-content
 
   &__headline
     @extend %text-headline
 
   &__list
     display: grid
-    grid-gap: $unit*5
+    grid-gap: $unit*2
     +mq-s
       grid-template-columns: repeat(2, 1fr)
-      grid-gap: $unit*10 $unit*5
 
   &__item
 

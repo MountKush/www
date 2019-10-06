@@ -1,22 +1,20 @@
 <template lang='pug'>
 main(class='container-index')
-  div(class='logo-container')
-    div(class='logo')
-      div
-      h1 Mount Kush
-  Hero
+  PricingNew
+  //- Hero
   //- Services
   Work
 
   //- About
-  Pricing
-  Testimonial
-  Contact
+  //- Pricing
+  //- Testimonial
+  //- Contact
 </template>
 
 
 <script>
 import Hero from '~/components/Hero.vue'
+import PricingNew from '~/components/PricingNew.vue'
 import Services from '~/components/Services.vue'
 import Work from '~/components/Work.vue'
 import Testimonial from '~/components/Testimonial.vue'
@@ -33,7 +31,8 @@ export default {
     Testimonial,
     About,
     Contact,
-    Pricing
+    Pricing,
+    PricingNew
   },
   data () {
     return {}
@@ -43,28 +42,8 @@ export default {
 
 <style lang='sass' scoped>
 .container-index
-
-
-.logo-container
-  @extend %container-content
-  padding: $unit*3 0
-  display: none
-
-
-
-.logo
-  display: inline-flex
-  background: $black
-  color: #d0a443
-  padding: $unit $unit*2
-  min-height: $unit*5
-  align-items: center
-
-
-  & h1
-    color: currentColor
-    text-transform: uppercase
-    font-size: 14px
-    font-weight: bold
+  display: grid
+  grid-gap: $unit*2
+  padding-top: $unit*6
 
 </style>

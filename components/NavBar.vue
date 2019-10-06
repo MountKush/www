@@ -84,14 +84,14 @@ export default {
 <style lang='sass' scoped>
 .nav-bar-container
   background: $white
-  padding: $unit 0
-  border-bottom: 1px solid $grey
+  background: rgba(34, 34, 34, 1)
 
 .nav-bar
   @extend %container-content
   display: grid
   grid-auto-flow: column
   grid-template-columns: auto 1fr
+  height: $unit*6
 
   &__hamburger
     justify-self: end
@@ -104,11 +104,11 @@ export default {
     display: flex
     align-items: center
     color: $blue
-    // color: #caa94a
-    // color: $white
+    color: #caa94a
+    color: $white
     // border: 2px solid #caa94a
-    padding: $unit
-    background: $grey
+    // padding: $unit
+    // background: $grey
     // background: #caa94a
 
     & p
@@ -137,7 +137,7 @@ export default {
   &__item
 
   &__link
-
+    color: $white
 
 
 

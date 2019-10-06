@@ -67,7 +67,7 @@ export default {
   &__nav-bar
     position: fixed
     z-index: 99
-    width: 100vw
+    width: 100%
 
   &__error,
   &__view

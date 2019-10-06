@@ -64,7 +64,7 @@ export default {
   height: $unit*5
   display: block
   border-radius: 50%
-  background: rgba(255, 255, 255, 0.5)
+  // background: rgba(255, 255, 255, 0.5)
 
   &::after,
   &::before
@@ -74,7 +74,7 @@ export default {
     left: 50%
     width: $unit*3
     height: 2px
-    background: $black
+    background: $white
     transition: transform 500ms
 
   &::after
