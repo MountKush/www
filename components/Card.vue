@@ -74,7 +74,7 @@ export default {
   display: grid
   grid-template-rows: auto 1fr
   grid-template-columns: 1fr
-  height: 100%
+  // height: 100%
   // min-height: 520px
   background: $grey
 
