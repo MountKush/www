@@ -1,11 +1,9 @@
 <template lang='pug'>
 div(
-  id='work'
   class='container-work'
 )
 
   section(class='work')
-    //- h2(class='work__headline') {{ headline }}
     ul(class='work__list')
       li(
         v-for='(item, index) in work'
@@ -21,13 +19,13 @@ div(
 
 <script>
 import Card from '~/components/Card.vue'
-import dashMockup from '~/assets/images/dashMockup.png'
-import feedMeSugarMockup from '~/assets/images/feedMeSugarMockup.png'
-import chatCiaoMockup from '~/assets/images/chatCiaoMockup.png'
-import kushMockup from '~/assets/images/kushMockup.png'
-import adventMockup from '~/assets/images/adventMockup.png'
-import galleryMockup from '~/assets/images/galleryMockup.png'
-import mockupVessel from '~/assets/images/mockupVessel.jpg'
+import servicesHero from '~/assets/images/servicesHero.png'
+import servicesHeroSmall from '~/assets/images/servicesHeroSmall.png'
+import agencyHero from '~/assets/images/agencyHero.png'
+import agencyHeroSmall from '~/assets/images/agencyHeroSmall.png'
+import sparkHero from '~/assets/images/sparkHero.png'
+import sparkHeroSmall from '~/assets/images/sparkHeroSmall.png'
+
 
 
 export default {
@@ -40,8 +38,9 @@ export default {
       headline: 'Select Work',
       work: [
         {
-          image: kushMockup,
-          headline: 'Shopify Experts',
+          image: agencyHero,
+          imageSmall: agencyHeroSmall,
+          headline: 'Sell More',
           text: 'We\'re a Shopify development agency helping Cannabis merchants thrive.',
           links: [
             {
@@ -55,9 +54,10 @@ export default {
           ]
         },
         {
-          image: adventMockup,
+          image: sparkHero,
+          imageSmall: sparkHeroSmall,
           headline: 'Spark Theme',
-          text: 'Blazing-fast professional Shopify theme for the growing Cannabis online store.',
+          text: 'Performance driven features, with epic design flexibility.',
           links: [
             {
               link: 'linkText',
@@ -70,7 +70,8 @@ export default {
           ]
         },
         {
-          image: chatCiaoMockup,
+          image: servicesHero,
+          imageSmall: servicesHeroSmall,
           headline: 'Pro Theme Support',
           text: 'A dedicated team of Shopify experts ready to help.',
           links: [
@@ -112,5 +113,10 @@ export default {
   &__item
 
   &__card
+    color: white
+    height: 500px
+    +mq-m
+      height: unset
+      min-height: 736px
 
 </style>

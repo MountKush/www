@@ -1,11 +1,9 @@
 <template lang='pug'>
 div(
-  id='work'
   class='container-work'
 )
 
   section(class='work')
-    //- h2(class='work__headline') {{ headline }}
     ul(class='work__list')
       li(
         v-for='(item, index) in work'
@@ -21,14 +19,18 @@ div(
 
 <script>
 import Card from '~/components/Card.vue'
-import dashMockup from '~/assets/images/dashMockup.png'
-import feedMeSugarMockup from '~/assets/images/feedMeSugarMockup.png'
-import chatCiaoMockup from '~/assets/images/chatCiaoMockup.png'
-import kushMockup from '~/assets/images/kushMockup.png'
-import adventMockup from '~/assets/images/adventMockup.png'
-import galleryMockup from '~/assets/images/galleryMockup.png'
-import mockupVessel from '~/assets/images/mockupVessel.jpg'
-import headshot from '~/assets/images/headshot.png'
+import appHero from '~/assets/images/appHero.png'
+import appHeroSmall from '~/assets/images/appHeroSmall.png'
+import clientsHero from '~/assets/images/clientsHero.png'
+import clientsHeroSmall from '~/assets/images/clientsHeroSmall.png'
+import newsletterHero from '~/assets/images/newsletterHero.png'
+import newsletterHeroSmall from '~/assets/images/newsletterHeroSmall.png'
+import blogHero from '~/assets/images/blogHero.png'
+import blogHeroSmall from '~/assets/images/blogHeroSmall.png'
+import themesHero from '~/assets/images/themesHero.png'
+import themesHeroSmall from '~/assets/images/themesHeroSmall.png'
+import aboutHero from '~/assets/images/aboutHero.png'
+import aboutHeroSmall from '~/assets/images/aboutHeroSmall.png'
 
 
 export default {
@@ -41,9 +43,10 @@ export default {
       headline: 'Select Work',
       work: [
         {
-          image: mockupVessel,
+          image: themesHero,
+          imageSmall: themesHeroSmall,
           headline: 'Themes',
-          text: 'Premium cannabis themes guarenteed to increase your user engagement.',
+          text: 'Build your brand and increase sales with a premium ecommerce experience.',
           links: [
             {
               link: 'linkText',
@@ -56,9 +59,10 @@ export default {
           ]
         },
         {
-          image: feedMeSugarMockup,
-          headline: 'Next Generation Dashboard',
-          text: 'A 100+ exclusive advanced Shopify applications.',
+          image: appHero,
+          imageSmall: appHeroSmall,
+          headline: 'Apps',
+          text: 'Add extra functionality to improve your marketing, conversions, and more.',
           links: [
             {
               link: 'linkText',
@@ -71,9 +75,10 @@ export default {
           ]
         },
         {
-          image: headshot,
-          headline: 'About Us',
-          text: 'A deep understanding of the Cannabis industry, and a data-driven approach makes us unique.',
+          image: aboutHero,
+          imageSmall: aboutHeroSmall,
+          headline: 'Agency',
+          text: 'Ready for Shopify Plus? Let our agency team build the perfect solution.',
           links: [
             {
               link: 'linkText',
@@ -86,8 +91,9 @@ export default {
           ]
         },
         {
-          image: chatCiaoMockup,
-          headline: 'Our Clients',
+          image: clientsHero,
+          imageSmall: clientsHeroSmall,
+          headline: 'Clients',
           text: 'See what your peers have to say about us.',
           links: [
             {
@@ -97,20 +103,22 @@ export default {
           ]
         },
         {
-          image: galleryMockup,
-          headline: 'We Write',
-          text: 'We share Shopify pro tips regularly, explore our blog to learn something new.',
+          image: blogHero,
+          imageSmall: blogHeroSmall,
+          headline: 'Explore',
+          text: 'Shopify news, and eCommerce advice to help you increase sales.',
           links: [
             {
               link: 'linkText',
-              linkText: 'See more'
+              linkText: 'Read blog'
             }
           ]
         },
         {
-          image: adventMockup,
-          headline: 'Weekly Newsletter',
-          text: 'Weekly newsletter of the latest trends in the Cannabis industry.',
+          image: newsletterHero,
+          imageSmall: newsletterHeroSmall,
+          headline: 'Newsletter',
+          text: 'Grow your business with insight from Shopify experts.',
           links: [
             {
               link: 'linkText',
@@ -118,18 +126,6 @@ export default {
             }
           ]
         }
-        // {
-        //   image: dashMockup,
-        //   headline: 'Dash — Single Page Application',
-        //   text: 'Minimalist chat utility that is secure and easy to use.',
-        //   link: ''
-        // },
-        // {
-        //   image: adventMockup,
-        //   headline: 'Advent',
-        //   text: 'Mobile-first, brand development digital agency.',
-        //   link: 'https://advent-digital-agency.herokuapp.com/'
-        // },
       ]
     }
   },
@@ -153,11 +149,15 @@ export default {
   &__list
     display: grid
     grid-gap: $unit*2
-    +mq-s
+    +mq-m
       grid-template-columns: repeat(2, 1fr)
 
   &__item
 
   &__card
+    height: 500px
+    +mq-m
+      height: unset
+      min-height: 580px
 
 </style>

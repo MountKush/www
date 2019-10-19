@@ -14,8 +14,8 @@ div(
     a(
       v-for='(item, index) in links'
       :key='item + index'
-      :href='item.link'
       class='copy__link'
+      @click='trackEvent(item.linkText)'
     )
       | {{ item.linkText }}
       IconChevron(class='copy__link-svg')
@@ -47,21 +47,44 @@ export default {
     return {}
   },
   computed: {},
-  methods: {}
+  methods: {
+    trackEvent (linkText) {
+      const data = {
+        eventCategory: 'Hero Tile Link',
+        eventAction: 'click',
+        eventLabel: `${this.headline} - ${linkText}`
+      }
+      this.$ga.event(data)
+      console.log('track event: ', data)
+    }
+  }
 }
 </script>
 
 
 <style lang='sass' scoped>
 .copy
+  @extend %flex--column-center
+  pointer-events: none
 
   &__headline
     font-weight: $fw-bold
-    font-size: $fs2
+    font-size: $fs1
     text-align: center
+    max-width: 520px
+    width: 90%
+    +mq-xs
+      font-size: $fs2
 
   &__text
     text-align: center
+    max-width: 520px
+    width: 90%
+    margin-top: $unit
+    +mq-m
+      font-size: $fs1
+    +mq-m
+      max-width: 740px
 
   &__cta-links
     display: flex
@@ -72,9 +95,13 @@ export default {
     @extend %flex--row-center
     margin-top: $unit*2
     color: $blue
+    pointer-events: auto
 
     &:nth-child(n+2)
       margin-left: $unit*2
+
+    &:hover
+      text-decoration: underline
 
     &-svg
       width: $unit

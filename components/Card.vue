@@ -3,6 +3,7 @@ article(class='card')
   a(
     target='_blank'
     class='card__link'
+    @click='trackEvent'
   )
 
   CardCopy(
@@ -17,9 +18,14 @@ article(class='card')
     v-if='card.image'
     class='card__display'
   )
-    img(
-      v-lazy='card.image'
+    figure(
+      v-lazy:background-image='card.image'
       class='card__image'
+    )
+    figure(
+      v-if='card.imageSmall'
+      v-lazy:background-image='card.imageSmall'
+      class='card__image card__image--small'
     )
 </template>
 
@@ -43,11 +49,22 @@ export default {
   computed: {
     card () {
       return {
-        image: this.cardData.image ? this.cardData.image : ''
+        image: this.cardData.image ? this.cardData.image : '',
+        imageSmall: this.cardData.imageSmall ? this.cardData.imageSmall : ''
       }
     }
   },
-  methods: {}
+  methods: {
+    trackEvent () {
+      const data = {
+        eventCategory: 'Hero Tile',
+        eventAction: 'click',
+        eventLabel: this.cardData.headline
+      }
+      this.$ga.event(data)
+      console.log('track event: ', data)
+    }
+  }
 }
 </script>
 
@@ -58,7 +75,7 @@ export default {
   grid-template-rows: auto 1fr
   grid-template-columns: 1fr
   height: 100%
-  min-height: 520px
+  // min-height: 520px
   background: $grey
 
   &__link
@@ -75,17 +92,34 @@ export default {
     z-index: 4
 
   &__display
-    grid-row: 2 / 3
+    grid-row: 1 / 3
     grid-column: 1 / 2
     position: relative
     z-index: 1
     display: flex
-    justify-content: center
-    align-items: flex-end
 
   &__image
-    max-width: 520px
-    max-height: 520px
+    display: none
+    +mq-m
+      display: block
+    // max-width: 520px
+    // max-height: 520px
+    width: 100%
+    background-repeat: no-repeat
+    background-position: center bottom
+    position: absolute
+    top: 0
+    height: 100%
+
+    &--small
+      display: block
+      background-size: 876px 600px
+      +mq-s
+        background-position: 50% 80%
+        background-size: 1076px 700px
+      +mq-m
+        display: none
+
 
 // override(s)
 .no-shadow

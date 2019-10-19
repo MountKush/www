@@ -6,6 +6,6 @@ export default {
     isOpen: false,
   },
   emailCollection: {
-    isOpen: true
+    isOpen: false
   }
 }

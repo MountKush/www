@@ -16,12 +16,11 @@ div(class='nav-bar-container')
         class='nav-bar__item'
       )
         a(
-          @click='handleNavLink(item)'
           class='nav-bar__link'
+          @click='trackEvent(item.text)'
         ) {{ item.text }}
 
     Hamburger(class='nav-bar__hamburger')
-
 </template>
 
 
@@ -39,21 +38,18 @@ export default {
   data () {
     return {
       nav: [
-        // {
-        //   text: 'Services'
-        // },
         {
-          text: 'Work'
+          text: 'Themes'
         },
-        // {
-        //   text: 'Bio'
-        // },
         {
-          text: 'Pricing'
+          text: 'Apps'
         },
-        // {
-        //   text: 'Team'
-        // },
+        {
+          text: 'Agency'
+        },
+        {
+          text: 'Blog'
+        },
         {
           text: 'Contact'
         }
@@ -75,6 +71,17 @@ export default {
         window.scrollTo(0, this.scrollY)
         this.$scrollTo(anchor)
       })
+    },
+
+
+    trackEvent (linkText) {
+      const data = {
+        eventCategory: 'Navigation Link',
+        eventAction: 'click',
+        eventLabel: linkText
+      }
+      this.$ga.event(data)
+      console.log('track event: ', data)
     }
   }
 }

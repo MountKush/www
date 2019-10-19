@@ -43,6 +43,19 @@ export default {
       else {
         this.recordScrollPosition()
       }
+
+      this.trackEvent()
+    },
+
+
+    trackEvent () {
+      const data = {
+        eventCategory: 'Hamburger',
+        eventAction: 'click',
+        eventLabel: `Toggle Hamburger`
+      }
+      this.$ga.event(data)
+      console.log('track event: ', data)
     },
 
 
